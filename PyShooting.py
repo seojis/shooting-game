@@ -89,6 +89,5 @@ def runGame():
 
     pygame.quit()
 
-
 initGame()
 runGame()
