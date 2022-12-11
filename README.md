@@ -7,8 +7,8 @@ All thanks  to  [Lee Soo-an](https://www.youtube.com/@user-ss5no9xw6e) for makin
 
 # Requirements: (with versions we tested on)
 
-1. python(3.10)
-2. pygame
+1. python(3.10.5)
+2. pygame(2.1.2)
 
 # Results:
 
