@@ -12,6 +12,8 @@ All thanks  to  [Lee Soo-an](https://www.youtube.com/@user-ss5no9xw6e) for makin
 
 # Results:
 
+[Shooting Game.gif](https://user-images.githubusercontent.com/112882098/206992159-dd84c567-e74d-417e-89d8-c603a11dabcd.gif)
+
 ![shootinggame1](https://user-images.githubusercontent.com/102226092/207027148-840c651d-ece7-4de9-8622-b162e3af08e6.jpg)
 
 ![shootinggame2](https://user-images.githubusercontent.com/102226092/207027312-515746dc-c0b5-42ec-be4a-c23c05888075.jpg)
