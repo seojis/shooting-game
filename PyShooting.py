@@ -10,6 +10,8 @@ rockImage = ['rock01.png','rock02.png','rock03.png','rock04.png','rock05.png'
             ,'rock06.png','rock07.png','rock08.png']
 explosionSound = ['explosion01.wav','explosion02.wav','explosion03.wav','explosion04.wav']
 
+
+
 def writeScore(count):
     global gamePad
     font = pygame.font.Font('NanumGothic.ttf', 20)
@@ -23,21 +25,23 @@ def writePassed(count):
     gamePad.blit(text,(360,0))
 
 def writeMessage(text):
-    global gamePad, gameoverSound
-    textfont = pygame.font.Font(text,True,(255,0,0))
+    global gamePad
+    textfont = pygame.font.Font('NanumGothic.ttf',80)
+    text = textfont.render(text,True,(255,0,0))
     textpos = text.get_rect()
-    textpos.center = (padWidth/2,padHeight/2)
+    textpos.center = (padWidth/2, padHeight/2)
     gamePad.blit(text, textpos)
     pygame.display.update()
     pygame.mixer.music.stop()
-    gameoverSound.play(-1)
+    sleep(2)
+    pygame.mixer.music.play(-1)
     runGame()
 
 def crash():
     global gamePad
     writeMessage('전투기 파괴!')
 
-def gameover():
+def gameOver():
     global gamePad
     writeMessage("게임 오버!")
 
@@ -45,6 +49,18 @@ def drawObject(obj, x, y):
     global gamePad
     gamePad.blit(obj, (x, y))
 
+def initGame():
+    global gamePad, clock, background, fighter, missile, explosion
+    pygame.init()
+    gamePad = pygame.display.set_mode((padWidth, padHeight))
+    pygame.display.set_caption('shooting')
+    background = pygame.image.load('background.png')
+    fighter = pygame.image.load('fighter.png')
+    missile = pygame.image.load('missile.png')
+    explosion = pygame.image.load('explosion.png')
+    pygame.mixer.music.load('music.wav')
+    pygame.mixer.music.play(-1)
+    clock = pygame.time.Clock()
 
 def initGame():
     global gamePad, clock, background, fighter, missile, explosion
@@ -58,9 +74,7 @@ def initGame():
     pygame.mixer.music.load('music.wav')
     pygame.mixer.music.play(-1)
     missileSound = pygame.mixer.Sound('missile.wav')
-    gameOverSound = pygame.mixer.Sound('gameover.wav')
     clock = pygame.time.Clock()
-
 
 def runGame():
     global gamePad, clock, background, fighter, missile, explosion
@@ -120,13 +134,15 @@ def runGame():
         elif x > padWidth - fighterWidth:
             x = padWidth - fighterWidth
 
-
-
+        if y < rockY + rockHeight:
+            if (rockX > x and rockX < x + fighterWidth) or \
+                (rockX + rockWidth > x and rockX + rockWidth):
+                crash()
 
         drawObject(fighter, x, y)
         
         if rockPassed == 3:
-            gameover()
+            gameOver()
 
         if len(missileXY) != 0:
             for i, bxy in enumerate(missileXY):
