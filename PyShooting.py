@@ -8,6 +8,7 @@ padWidth = 480
 padHeight = 640
 rockImage = ['rock01.png','rock02.png','rock03.png','rock04.png','rock05.png'
             ,'rock06.png','rock07.png','rock08.png']
+
 def writeScore(count):
     global gamePad
     font = pygame.font.Font('NanumGothic.ttf', 20)
