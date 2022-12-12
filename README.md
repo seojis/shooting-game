@@ -3,7 +3,7 @@
 ### It's a game of shooting a meteorite with a missile.
 A shooting game created through Python and pygame Library.
 
-All thanks  to  [Lee Soo-an](https://www.youtube.com/@user-ss5no9xw6e) for making great tutorials. This project is inspired from his YouTube: [Creating a Shooting Game with Python](https://youtu.be/-e_5sOsKqrU) We have included the author's code. As for the change, I changed it so that the meteorite display and the meteorite speed drop randomly.
+All thanks  to  [Lee Soo-an](https://www.youtube.com/@user-ss5no9xw6e) for making great tutorials. This project is inspired from his YouTube: [Creating a Shooting Game with Python](https://youtu.be/-e_5sOsKqrU) We have included the author's code. As for the change, We changed it so that the meteorite display and the meteorite speed drop randomly.
 
 # Requirements: (with versions we tested on)
 
